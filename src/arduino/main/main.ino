@@ -1,4 +1,4 @@
-int ir = 2; // This is our input pin for IR Sensor
+int ir = A1; // This is our input pin for IR Sensor
 void setup()
 {
   pinMode(ir, INPUT);
