@@ -4,7 +4,7 @@ import time
 import mariadb as connector
 
 # Serial port configuration
-serial_port = '/dev/ttyUSB0'
+serial_port = "/dev/ttyUSB0"
 baud_rate = 9600
 ser = serial.Serial(serial_port, baud_rate)
 
@@ -14,23 +14,21 @@ sqluser = "arduino"
 with open("mysqlpasswd", "r") as passfile:
     sqlpasswd = passfile.read()
 cnx = connector.connect(
-    user=sqluser,
-    passwd=sqlpasswd,
-    host=sqlhost,
-    autocommit=True,
-    database="arduino"
+    user=sqluser, passwd=sqlpasswd, host=sqlhost, autocommit=True, database="arduino"
 )
+
 
 def execute(arg):
     cursor = cnx.cursor()
     cursor.execute(arg)
     cursor.close()
 
+
 def main():
     while True:
         line = ser.readline()
-        line = line.decode("utf-8") #ser.readline returns a binary, convert to string
-        with open('log.txt', 'w') as f:
+        line = line.decode("utf-8")  # ser.readline returns a binary, convert to string
+        with open("log.txt", "w") as f:
             f.write(line)
         dat = line.split(" ")
         x = len(dat)
@@ -41,6 +39,7 @@ def main():
             execute(query)
             cnt += 1
         time.sleep(0.1)
+
 
 if __name__ == "__main__":
     try:
