@@ -1,7 +1,5 @@
-#include <SoftwareSerial.h>
-int ir1 = A0; // This is our input pin for IR Sensor for id = 1
-int ir2 = A1; // This is our input pin for IR Sensor for id = 2
-SoftwareSerial ir(0, 1);
+int ir1 = A0;
+int ir2 = A1;
 
 String sensor1;
 String sensor2;
