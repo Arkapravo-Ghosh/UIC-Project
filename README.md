@@ -10,9 +10,10 @@
 
 # Hardware
 <details>
-<summary>Using Arduino Uno and Raspberry Pi</summary>
+    <summary>Using Arduino Uno and Raspberry Pi</summary>
     ## Raspberry Pi
-    Configure the Raspberry Pi to run [this file](src/server/main.py) on boot. This file will capture data from Serial Monitor and store it in a MariaDB Database.
+    Configure the Raspberry Pi to run [this file](src/server/main.py) on boot. This file will capture data from Serial
+    Monitor and store it in a MariaDB Database.
     ## Arduino Uno
     Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
 
@@ -22,8 +23,9 @@
 </details>
 
 <details>
-<summary>Using Raspberry Pi only</summary>
+    <summary>Using Raspberry Pi only</summary>
     ## Raspberry Pi
-    Configure the Raspberry Pi to run [this file](src/alternate/main.py) on boot. This file will capture data from the IR sensors via GPIO Pins and store it in a MariaDB Database.
+    Configure the Raspberry Pi to run [this file](src/alternate/main.py) on boot. This file will capture data from the
+    IR sensors via GPIO Pins and store it in a MariaDB Database.
 
 </details>
