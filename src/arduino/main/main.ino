@@ -15,6 +15,6 @@ void loop()
   {
     Serial.print("Path is clear! ");
   }
-  Serial.println(full)
+  Serial.println(full);
   delay(500);
 }
