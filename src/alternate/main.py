@@ -47,4 +47,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         GPIO.cleanup()
-        print("Exited.")
+        print("\nExited.")
