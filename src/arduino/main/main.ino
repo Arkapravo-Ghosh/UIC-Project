@@ -9,7 +9,7 @@ void setup()
 {
   pinMode(ir1, INPUT);
   pinMode(ir2, INPUT);
-  Serial.begin(9500);
+  Serial.begin(9600);
 }
 void loop()
 {
