@@ -27,7 +27,7 @@ def execute(arg):
 def main():
     while True:
         line = ser.readline()
-        line = line.decode("utf-8")  # ser.readline returns a binary, convert to string
+        line = line.decode("utf-8")
         with open("log.txt", "w") as f:
             f.write(line)
         dat = line.split(" ")
