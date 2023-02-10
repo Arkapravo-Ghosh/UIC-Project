@@ -1,14 +1,13 @@
-int obstaclePin = A1; // This is our input pin
+int ir = 2; // This is our input pin for IR Sensor
 void setup()
 {
-  pinMode(obstaclePin, INPUT);
+  pinMode(ir, INPUT);
   Serial.begin(9600);
 }
 void loop()
 {
-  int hasObstacle = analogRead(obstaclePin);
-  // Serial.println(hasObstacle);
-  if (hasObstacle < 50)
+  int full = digitalRead(ir);
+  if (full = HIGH)
   {
     Serial.print("Obstacle Detected! ");
   }
@@ -16,20 +15,6 @@ void loop()
   {
     Serial.print("Path is clear! ");
   }
-  Serial.println(hasObstacle);
+  Serial.println(full);
   delay(500);
-  /*
-  if (hasObstacle > )
-
-  {
-    Serial.print( "Stop something is ahead!!  ");
-    Serial.println(hasObstacle);
-  }
-  else
-  {
-    Serial.print("Path is clear  ");
-    Serial.println(hasObstacle);
-  }
-  */
-  // delay(100);
 }
