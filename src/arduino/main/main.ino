@@ -1,4 +1,3 @@
-#include <Arduino.h>
 int obstaclePin = A1; // This is our input pin
 void setup()
 {
