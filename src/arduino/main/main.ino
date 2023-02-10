@@ -1,20 +1,47 @@
-int ir = A1; // This is our input pin for IR Sensor
+#include <SoftwareSerial.h>
+int ir1 = A0; // This is our input pin for IR Sensor for id = 1
+int ir2 = A1; // This is our input pin for IR Sensor for id = 2
+SoftwareSerial ir(0, 1);
+
+String sensor1;
+String sensor2;
 void setup()
 {
-  pinMode(ir, INPUT);
-  Serial.begin(9600);
+  pinMode(ir1, INPUT);
+  pinMode(ir2, INPUT);
+  Serial.begin(9500);
 }
 void loop()
 {
-  int full = analogRead(ir);
-  if (full < 50)
+  String data = "";
+  park1();
+  park2();
+  data = sensor1 + " " + sensor2 + " ";
+  Serial.println(data);
+}
+void park1()
+{
+  if (analogRead(ir1) > 60)
   {
-    Serial.print("Obstacle Detected! ");
+    sensor1 = "0";
+    delay(200);
   }
-  else
+  if (analogRead(ir1) < 60)
   {
-    Serial.print("Path is clear! ");
+    sensor1 = "1";
+    delay(200);
   }
-  Serial.println(full);
-  delay(500);
+}
+void park2()
+{
+  if (analogRead(ir2) > 60)
+  {
+    sensor2 = "0";
+    delay(200);
+  }
+  if (analogRead(ir2) < 60)
+  {
+    sensor2 = "1";
+    delay(200);
+  }
 }
