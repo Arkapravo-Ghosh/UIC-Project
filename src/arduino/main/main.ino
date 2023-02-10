@@ -6,8 +6,8 @@ void setup()
 }
 void loop()
 {
-  int full = digitalRead(ir);
-  if (full = HIGH)
+  int full = analogRead(ir);
+  if (full > 50)
   {
     Serial.print("Obstacle Detected! ");
   }
