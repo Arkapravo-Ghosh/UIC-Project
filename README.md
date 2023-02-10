@@ -8,6 +8,8 @@
 * Arkapravo Ghosh, 1st Year, CSE (IoT)
 * Mahak Gupta, 2nd Year, CST
 
-## Arduino Uno Code
-Upload the [Source Code](src/arduino/main) to Arduino Uno Board
+## Arduino Uno
+Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
+
+![](src/arduino/circuit_diagram.png)
 
