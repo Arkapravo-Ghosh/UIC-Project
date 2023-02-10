@@ -1,23 +1,27 @@
 #include <Arduino.h>
-int  obstaclePin = A1;        // This is our input pin
-void setup() {
+int obstaclePin = A1; // This is our input pin
+void setup()
+{
   pinMode(obstaclePin, INPUT);
-  Serial.begin(9600);  
+  Serial.begin(9600);
 }
-void loop() {
+void loop()
+{
   int hasObstacle = analogRead(obstaclePin);
-  //Serial.println(hasObstacle);
-  if (hasObstacle < 50) {
+  // Serial.println(hasObstacle);
+  if (hasObstacle < 50)
+  {
     Serial.print("Obstacle Detected! ");
   }
-  else {
+  else
+  {
     Serial.print("Path is clear! ");
   }
   Serial.println(hasObstacle);
   delay(500);
   /*
   if (hasObstacle > )
- 
+
   {
     Serial.print( "Stop something is ahead!!  ");
     Serial.println(hasObstacle);
@@ -28,5 +32,5 @@ void loop() {
     Serial.println(hasObstacle);
   }
   */
-  //delay(100);
+  // delay(100);
 }
