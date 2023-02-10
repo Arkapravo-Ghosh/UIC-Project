@@ -48,3 +48,4 @@ if __name__ == "__main__":
         cnx.close()
         ser.close()
         print("\nExited.")
+        exit(0)
