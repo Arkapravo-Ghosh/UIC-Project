@@ -1,4 +1,6 @@
 # Project for Ureckon Innovation Challenge 2023
+![](https://img.shields.io/badge/license-MIT-blue)
+![](https://img.shields.io/badge/languages-arduino%2C%20python%2C%20sql-blue)
 ### Made by:
 * Sankalpa Dutta, 1st Year, CSE (IoT)
 * Dhruba Dutta Banik, 1st Year, CSE (IoT)
