@@ -10,11 +10,11 @@ ser = serial.Serial(serial_port, baud_rate)
 
 # MariaDB configuration
 sqlhost = "localhost"
-sqluser = "arduino"
+sqluser = "uicprojserver"
 with open("mysqlpasswd", "r") as passfile:
     sqlpasswd = passfile.read()
 cnx = connector.connect(
-    user=sqluser, passwd=sqlpasswd, host=sqlhost, autocommit=True, database="arduino"
+    user=sqluser, passwd=sqlpasswd, host=sqlhost, autocommit=True, database="uic_project"
 )
 
 
