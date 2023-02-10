@@ -1,0 +1,13 @@
+[Unit]
+Description=UIC Project Server
+After=network.target
+
+[Service]
+Type=simple
+User=arkapravo
+Group=arkapravo
+WorkingDirectory=/home/arkapravo/UIC-Project/src/alternative
+ExecStart=/bin/python3 /home/arkapravo/UIC-Project/src/alternative/main.py
+
+[Install]
+WantedBy=multi-user.target
