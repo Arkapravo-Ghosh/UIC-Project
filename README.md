@@ -10,11 +10,13 @@
 
 # Hardware
 <details>
-    <summary>Using Arduino Uno and Raspberry Pi</summary>
+    <summary>Using Arduino Uno and A Linux Server</summary>
 
-## Raspberry Pi
-Configure the Raspberry Pi to run [this file](src/server/main.py) on boot. This file will capture data from Serial
-Monitor and store it in a MariaDB Database.
+## Linux Server
+Configure the Linux Server to run [this file](src/server/main.py) on boot by putting [this SystemD Service File](src/arduino/uic-project-ard.service) into `/etc/systemd/system/`. This file will capture data from Serial.
+> Note: The username in both these files are configured to be `arkapravo` and thus the path to the files. If necessary, edit them to support your configuration.
+
+Then, run this command: `sudo systemctl daemon-reload && sudo systemctl enable uic-project-ard.service`
 ## Arduino Uno
 Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
 <!--
@@ -27,7 +29,7 @@ Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the
 </details>
 
 <details>
-    <summary>Using Raspberry Pi only</summary>
+    <summary>Using Raspberry Pi</summary>
 
 ## Raspberry Pi
 Configure the Raspberry Pi to run [this file](src/alternate/main.py) on boot. This file will capture data from the
@@ -42,3 +44,60 @@ Refer to the following diagram for Rasberry Pi 4 Model B to understand GPIO Pins
 * Similarly, connect GPIO 23 (Pin 16) of Raspberry Pi to OUT Pin of the IR Sensor at Parking Slot 2
 
 </details>
+
+# Software
+## Linux Server
+Install [MariaDB Server](https://mariadb.com/downloads) in the Server you would be using for hosting the Database.
+> NOTE: The MariaDB Server should run at `0.0.0.0` and not `127.0.0.1`. Configure that in `bind-address` in the file `/etc/mysql/mariadb.conf.d/50-server.cnf`
+
+Log in to the root shell of MariaDB Server using the command: `sudo mysql -u root` or `sudo mysql -u root -p`
+
+Run the following SQL Queries to configure MariaDB as per our project:
+### 1. Creating Users
+#### Client User
+This user will be accessed by the client with read-only permissions on a single table so it does not need to have a secure password. Instead, we would be using the password as configured in the client.
+
+Run the following command:
+
+`CREATE USER 'client'@'%' IDENTIFIED BY 'guest';`
+
+#### Server User
+This user will be accessed by the server with write permissions on a single table and it needs a secure password. We need to store the password in a file named `mysqlpasswd` in the same directory as the server's program file.
+> NOTE: The server's program file is [this](src/server/main.py) if you are using an Arduino Uno and [this](src/alternate/main.py) if you are using a Raspberry Pi.
+Assuming the password is `ExAmpl1d2h`, run the following command:
+
+`CREATE USER 'uicprojserver'@'%' IDENTIFIED BY 'ExAmpl1d2h';`
+> NOTE: Use a different and more secure password than the one mentioned here.
+
+### 2. Creating the Database and the Table with proper properties
+
+Run the following command to create the database:
+
+`CREATE DATABASE uic_project;`
+
+Run the following command to use the newly created database:
+
+`USE uic_project;`
+
+Run the following command to create the table:
+
+`CREATE TABLE main(id int primary key auto_increment, full int);`
+
+Run the following command to create two rows:
+
+`INSERT INTO main(id) VALUES(1, 2);`
+
+### 3. Configuring Proper Privileges for the newly created users
+
+#### Client User
+
+`GRANT SELECT ON uic_project.main TO 'client'@'%';`
+
+#### Server User
+
+`GRANT ALL PRIVILEGES ON uic_project.* TO 'uicprojserver'@'%';`
+
+#### Refresh the Privileges
+
+`FLUSH PRIVILEGES;`
+
