@@ -107,3 +107,8 @@ Run the following command to create two rows:
 
 `FLUSH PRIVILEGES;`
 
+## Client
+
+The [client](src/client/main.py) is a simple Python script that will read the data from the database and display it in a CLI format. We can refresh it by using `watch` command in Linux.
+
+`watch -n 0.1 -t ./src/client/main.py`
