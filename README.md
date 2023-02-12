@@ -50,7 +50,13 @@ Refer to the following diagram for Rasberry Pi 4 Model B to understand GPIO Pins
 Install [MariaDB Server](https://mariadb.com/downloads) in the Server you would be using for hosting the Database.
 > NOTE: The MariaDB Server should run at `0.0.0.0` and not `127.0.0.1`. Configure that in `bind-address` in the file `/etc/mysql/mariadb.conf.d/50-server.cnf`
 
-Log in to the root shell of MariaDB Server using the command: `sudo mysql -u root` or `sudo mysql -u root -p`
+Log in to the root shell of MariaDB Server using the following command:
+
+`sudo mysql -u root`
+
+or 
+
+`sudo mysql -u root -p`
 
 Run the following SQL Queries to configure MariaDB as per our project:
 ### 1. Creating Users
