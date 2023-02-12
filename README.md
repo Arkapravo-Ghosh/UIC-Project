@@ -120,8 +120,9 @@ Run the following command to create two rows:
 <details>
     <summary>Client</summary>
 
-The [client](src/client/main.py) is a simple Python script that will read the data from the database and display it in a CLI format. We can refresh it by using `watch` command in Linux.
+The [client](src/client/main.py) is a simple Python script that uses `watch` command in Linux to refresh output from [this python program](src/client/prog.py), which will read the data from the database and display it in a CLI format.
 
-`watch -n 0.1 -t ./src/client/main.py`
+`cd ./src/client`\
+`./main.py`
 
 </details>
