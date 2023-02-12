@@ -16,7 +16,10 @@
 Configure the Linux Server to run [this file](src/server/main.py) on boot by putting [this SystemD Service File](src/server/uic-project-ard.service) into `/etc/systemd/system/`. This file will capture data from Serial.
 > Note: The username in both these files are configured to be `arkapravo` and thus the path to the files. If necessary, edit them to support your configuration.
 
-Then, run this command: `sudo systemctl daemon-reload && sudo systemctl enable uic-project-ard.service`
+Then, run the following command:
+
+`sudo systemctl daemon-reload && sudo systemctl enable uic-project-ard.service`
+
 ## Arduino Uno
 Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
 <!--
