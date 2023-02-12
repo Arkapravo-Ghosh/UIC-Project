@@ -22,9 +22,6 @@ Then, run the following command:
 
 ## Arduino Uno
 Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
-<!--
-![](src/arduino/circuit_diagram.png)
---->
 <p align="center"><a><img height="500" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/img/main/circuit_diagram.png"></a>&nbsp;&nbsp;</p>
 
 > This circuit will read the data from the IR sensors and send it to the Raspberry Pi via Serial Monitor.
