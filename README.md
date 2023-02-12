@@ -21,7 +21,8 @@ Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the
 ![](src/arduino/circuit_diagram.png)
 --->
 <p align="center"><a><img height="500" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/UIC-Project/main/src/arduino/circuit_diagram.png?token=GHSAT0AAAAAAB2RG62I6P4SJHPG74VOMBFCY7ITOVQ"></a>&nbsp;&nbsp;</p>
-This circuit will read the data from the IR sensors and send it to the Raspberry Pi via Serial Monitor.
+
+> This circuit will read the data from the IR sensors and send it to the Raspberry Pi via Serial Monitor.
 
 </details>
 
@@ -31,5 +32,13 @@ This circuit will read the data from the IR sensors and send it to the Raspberry
 ## Raspberry Pi
 Configure the Raspberry Pi to run [this file](src/alternate/main.py) on boot. This file will capture data from the
 IR sensors via GPIO Pins and store it in a MariaDB Database.
+
+Refer to the following diagram for Rasberry Pi 4 Model B to understand GPIO Pins
+<p align="center"><a><img height="500" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/UIC-Project/main/src/alternate/GPIO-Pinout-Diagram-2.png?token=GHSAT0AAAAAAB2RG62I4ORLOWJWA5FS4FV2Y7ITVXQ"></a>&nbsp;&nbsp;</p>
+
+* Connect Ground Pin of Raspberry Pi to the GND Pins of both the IR Sensors
+* Similarly, connect any of the 5V Power pins of Raspberry Pi to the VCC Pins of both the IR Sensors
+* Connect GPIO 22 (Pin 15) of Raspberry Pi to OUT Pin of the IR Sensor at Parking Slot 1
+* Similarly, connect GPIO 23 (Pin 16) of Raspberry Pi to OUT Pin of the IR Sensor at Parking Slot 2
 
 </details>
