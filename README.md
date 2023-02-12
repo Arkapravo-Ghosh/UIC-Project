@@ -34,8 +34,7 @@ Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the
     <summary>Using Raspberry Pi</summary>
 
 ## Raspberry Pi
-Configure the Raspberry Pi to run [this file](src/alternate/main.py) on boot. This file will capture data from the
-IR sensors via GPIO Pins and store it in a MariaDB Database.
+Configure the Raspberry Pi to run [this file](src/alternate/main.py) on boot by putting [this SystemD Service File](src/alternate/uic-project.service) into `/etc/systemd/system/`. This file will capture data from the IR sensors via GPIO Pins and store it in a MariaDB Database.
 
 Refer to the following diagram for Rasberry Pi 4 Model B to understand GPIO Pins
 <p align="center"><a><img height="500" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/img/main/GPIO-Pinout-Diagram-2.png"></a>&nbsp;&nbsp;</p>
