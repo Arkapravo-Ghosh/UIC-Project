@@ -17,8 +17,10 @@ Configure the Raspberry Pi to run [this file](src/server/main.py) on boot. This 
 Monitor and store it in a MariaDB Database.
 ## Arduino Uno
 Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
-
+<!--
 ![](src/arduino/circuit_diagram.png)
+--->
+<p align="center"><a><img height="500" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/UIC-Project/main/src/arduino/circuit_diagram.png?token=GHSAT0AAAAAAB2RG62I6P4SJHPG74VOMBFCY7ITOVQ"></a>&nbsp;&nbsp;</p>
 This circuit will read the data from the IR sensors and send it to the Raspberry Pi via Serial Monitor.
 
 </details>
