@@ -46,7 +46,9 @@ Refer to the following diagram for Rasberry Pi 4 Model B to understand GPIO Pins
 </details>
 
 # Software
-## Linux Server
+<details>
+    <summary>Linux Server</summary>
+
 Install [MariaDB Server](https://mariadb.com/downloads) in the Server you would be using for hosting the Database.
 > NOTE: The MariaDB Server should run at `0.0.0.0` and not `127.0.0.1`. Configure that in `bind-address` in the file `/etc/mysql/mariadb.conf.d/50-server.cnf`
 
@@ -107,8 +109,13 @@ Run the following command to create two rows:
 
 `FLUSH PRIVILEGES;`
 
-## Client
+</details>
+
+<details>
+    <summary>Client</summary>
 
 The [client](src/client/main.py) is a simple Python script that will read the data from the database and display it in a CLI format. We can refresh it by using `watch` command in Linux.
 
 `watch -n 0.1 -t ./src/client/main.py`
+
+</details>
