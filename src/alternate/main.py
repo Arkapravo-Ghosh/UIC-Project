@@ -9,7 +9,11 @@ sqluser = "uicprojserver"
 with open("mysqlpasswd", "r") as passfile:
     sqlpasswd = passfile.read()
 cnx = connector.connect(
-    user=sqluser, passwd=sqlpasswd, host=sqlhost, autocommit=True, database="uic_project"
+    user=sqluser,
+    passwd=sqlpasswd,
+    host=sqlhost,
+    autocommit=True,
+    database="uic_project",
 )
 
 # Pin Config
@@ -21,10 +25,12 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(ir1, GPIO.IN)
 GPIO.setup(ir2, GPIO.IN)
 
+
 def execute(arg):
     cursor = cnx.cursor()
     cursor.execute(arg)
     cursor.close()
+
 
 def main():
     while True:
@@ -41,6 +47,7 @@ def main():
         query = f"UPDATE main SET full = {y} WHERE id = {2}"
         execute(query)
         time.sleep(0.1)
+
 
 if __name__ == "__main__":
     try:

@@ -14,7 +14,11 @@ sqluser = "uicprojserver"
 with open("mysqlpasswd", "r") as passfile:
     sqlpasswd = passfile.read()
 cnx = connector.connect(
-    user=sqluser, passwd=sqlpasswd, host=sqlhost, autocommit=True, database="uic_project"
+    user=sqluser,
+    passwd=sqlpasswd,
+    host=sqlhost,
+    autocommit=True,
+    database="uic_project",
 )
 
 

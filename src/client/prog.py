@@ -1,7 +1,8 @@
 #!/bin/python3
 import mariadb as connector
-#import time
-#import os
+
+# import time
+# import os
 
 # MariaDB configuration
 sqlhost = "Ark-Pi"
@@ -24,11 +25,13 @@ cursor = cnx.cursor()
 def execute(arg):
     cursor.execute(arg)
 
-#def os_clear():
+
+# def os_clear():
 #    if os.name == "nt":
 #        os.system("cls")
 #    else:
 #        os.system("clear")
+
 
 def main():
     query = "SELECT * FROM main"
