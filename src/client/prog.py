@@ -5,7 +5,7 @@ import mariadb as connector
 # import os
 
 # MariaDB configuration
-sqlhost = "Ark-Pi"
+sqlhost = "11.0.0.19"
 sqluser = "client"
 sqlpasswd = "guest"
 try:
