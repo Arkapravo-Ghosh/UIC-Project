@@ -6,8 +6,8 @@ After=network.target
 Type=simple
 User=arkapravo
 Group=arkapravo
-WorkingDirectory=/home/arkapravo/UIC-Project/src/alternative
-ExecStart=/bin/python3 /home/arkapravo/UIC-Project/src/alternative/main.py
+WorkingDirectory=/home/arkapravo/UIC-Project/src/alternate
+ExecStart=/bin/python3 /home/arkapravo/UIC-Project/src/alternate/main.py
 
 [Install]
 WantedBy=multi-user.target
