@@ -23,7 +23,7 @@ Then, run the following command:
 `sudo systemctl daemon-reload && sudo systemctl enable uic-project-ard.service`
 
 ## Arduino Uno
-Upload the [Source Code](src/arduino/main) to Arduino Uno Board, then create the circuit as shown below:
+Upload the [Source Code](src/arduino/main/main.ino) to Arduino Uno Board, then create the circuit as shown below:
 <p align="center"><a><img height="500" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/img/main/circuit_diagram.png"></a>&nbsp;&nbsp;</p>
 
 > This circuit will read the data from the IR sensors and send it to the Raspberry Pi via Serial Monitor.
