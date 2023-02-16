@@ -2,7 +2,7 @@
 import mariadb as connector
 
 # MariaDB configuration
-sqlhost = "11.0.3.169"
+sqlhost = "11.0.4.71"
 sqluser = "client"
 sqlpasswd = "guest"
 try:
