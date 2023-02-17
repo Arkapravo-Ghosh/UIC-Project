@@ -38,13 +38,13 @@ def main():
             x = 0
         else:
             x = 1
-        query = f"UPDATE main SET full = {x} WHERE id = {1}"
+        query = f"UPDATE main SET full = {x} WHERE id = 1"
         execute(query)
         if GPIO.input(ir2):
             y = 0
         else:
             y = 1
-        query = f"UPDATE main SET full = {y} WHERE id = {2}"
+        query = f"UPDATE main SET full = {y} WHERE id = 2"
         execute(query)
         time.sleep(0.1)
 
