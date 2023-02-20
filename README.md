@@ -2,6 +2,11 @@
 ![](https://img.shields.io/badge/license-MIT-blue)
 ![](https://img.shields.io/badge/languages-arduino%2C%20raspberrypi%2C%20python%2C%20sql%2C%20linux-blue)
 
+</div>
+<div align=center>
+<img height="150" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/img/main/ureckon-logo.jpg"></img>
+</div>
+
 ### Project Name: Smart Parking System
 ### Made by:
 * Sankalpa Dutta, 1st Year, CSE (IoT)
