@@ -8,13 +8,19 @@ sqlhost = "localhost"
 sqluser = "uicprojserver"
 with open("mysqlpasswd", "r") as passfile:
     sqlpasswd = passfile.read()
-cnx = connector.connect(
-    user=sqluser,
-    passwd=sqlpasswd,
-    host=sqlhost,
-    autocommit=True,
-    database="uic_project",
-)
+
+while True:
+    try:
+        cnx = connector.connect(
+            user=sqluser,
+            passwd=sqlpasswd,
+            host=sqlhost,
+            autocommit=True,
+            database="uic_project",
+        )
+        break
+    except connector.OperationalError:
+        continue
 
 # Pin Config
 ir1 = 15
