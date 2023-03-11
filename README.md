@@ -55,6 +55,10 @@ Refer to the following diagram for Rasberry Pi 4 Model B to understand GPIO Pins
 * Connect GPIO 22 (Pin 15) of Raspberry Pi to OUT Pin of the IR Sensor at Parking Slot 1
 * Similarly, connect GPIO 23 (Pin 16) of Raspberry Pi to OUT Pin of the IR Sensor at Parking Slot 2
 
+</div>
+<div align=center>
+<img height="600" src="https://raw.githubusercontent.com/Arkapravo-Ghosh/img/main/smart-parking-system/smart-parking-system.jpg"></img>
+</div>
 </details>
 
 # Software
